@@ -15,7 +15,7 @@
 
 import 'dart:async';
 
-import 'package:flutter/widgets.dart';
+import 'package:pixel_perfect/widgets.dart';
 import 'package:flutter/material.dart' show Material, MaterialType, Theme, ThemeData;
 
 import 'push_button.dart';

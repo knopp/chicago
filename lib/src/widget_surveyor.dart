@@ -14,7 +14,7 @@
 // limitations under the License.
 
 import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
+import 'package:pixel_perfect/widgets.dart';
 
 /// Class that allows callers to measure the size of arbitrary widgets when
 /// laid out with specific constraints.

@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
+import 'package:pixel_perfect/widgets.dart';
 
 import 'focus_indicator.dart';
 

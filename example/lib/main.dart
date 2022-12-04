@@ -13,8 +13,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:flutter/widgets.dart';
 import 'package:chicago/chicago.dart';
+import 'package:pixel_perfect/widgets.dart';
 
 import 'src/activity_indicators.dart';
 import 'src/alerts.dart';

@@ -14,7 +14,7 @@
 // limitations under the License.
 
 import 'package:chicago/src/colors.dart';
-import 'package:flutter/widgets.dart';
+import 'package:pixel_perfect/widgets.dart';
 
 const double _checkboxSize = 14;
 const double _checkmarkSize = 10;

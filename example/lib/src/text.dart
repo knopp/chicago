@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:pixel_perfect/widgets.dart';
 
 class BoldText extends StatelessWidget {
   const BoldText(this.text, {Key? key}) : super(key: key);

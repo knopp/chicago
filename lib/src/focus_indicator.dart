@@ -15,7 +15,7 @@
 
 import 'dart:ui';
 
-import 'package:flutter/widgets.dart';
+import 'package:pixel_perfect/widgets.dart';
 
 class FocusIndicator extends StatelessWidget {
   const FocusIndicator({

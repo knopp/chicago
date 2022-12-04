@@ -16,7 +16,7 @@
 import 'dart:math' as math;
 
 import 'package:chicago/chicago.dart';
-import 'package:flutter/widgets.dart';
+import 'package:pixel_perfect/widgets.dart';
 
 import 'text.dart';
 

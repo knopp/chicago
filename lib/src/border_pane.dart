@@ -17,8 +17,8 @@ import 'dart:math' as math;
 import 'dart:ui';
 
 import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter/widgets.dart' as flutter show Border;
+import 'package:pixel_perfect/widgets.dart';
+import 'package:pixel_perfect/widgets.dart' as flutter show Border;
 
 class BorderPane extends StatelessWidget {
   const BorderPane({

@@ -16,7 +16,7 @@
 // Needed because chicago.TextInput still depends on Material
 import 'package:flutter/material.dart' show DefaultMaterialLocalizations, Material;
 import 'package:flutter/scheduler.dart';
-import 'package:flutter/widgets.dart';
+import 'package:pixel_perfect/widgets.dart';
 
 import 'navigator_listener.dart';
 import 'scroll_pane.dart';

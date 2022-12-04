@@ -14,7 +14,7 @@
 // limitations under the License.
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/widgets.dart';
+import 'package:pixel_perfect/widgets.dart';
 
 abstract class ActionTracker<I extends Intent> extends StatefulWidget {
   const ActionTracker({

@@ -14,7 +14,7 @@
 // limitations under the License.
 
 import 'package:chicago/chicago.dart';
-import 'package:flutter/widgets.dart' hide ListView, TableCell, TableRow;
+import 'package:pixel_perfect/widgets.dart' hide ListView, TableCell, TableRow;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

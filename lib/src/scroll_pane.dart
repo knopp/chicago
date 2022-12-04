@@ -18,7 +18,7 @@ import 'dart:math' show log, min, max;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/physics.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
+import 'package:pixel_perfect/widgets.dart';
 
 import 'deferred_layout.dart';
 import 'listener_list.dart';
