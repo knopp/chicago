@@ -527,10 +527,10 @@ class _DividerCustomPainter extends CustomPainter {
     assert(metricsController.hasMetrics);
     final Paint paint = Paint()
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 1
+      ..strokeWidth = 1.ps
       ..color = const Color(0xffc4c3bc);
     final Rect rowBounds = metricsController.getRowBounds(1)!;
-    final double y = rowBounds.bottom - 1.5;
+    final double y = rowBounds.bottom - 1.ps - 1.ps / 2;
     canvas.drawLine(Offset(2.5, y), Offset(size.width - 2.5, y), paint);
   }
 

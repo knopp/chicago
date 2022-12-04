@@ -194,7 +194,7 @@ class _RawSplitPane extends RenderObjectWidget {
     return _RenderSplitPane(
       orientation: orientation,
       splitRatio: initialSplitRatio,
-      splitterThickness: splitterThickness,
+      splitterThickness: splitterThickness.ps,
       roundToWholePixel: roundToWholePixel,
       resizePolicy: resizePolicy,
     );
@@ -204,7 +204,7 @@ class _RawSplitPane extends RenderObjectWidget {
   void updateRenderObject(BuildContext context, _RenderSplitPane renderObject) {
     renderObject
       ..orientation = orientation
-      ..splitterThickness = splitterThickness
+      ..splitterThickness = splitterThickness.ps
       ..roundToWholePixel = roundToWholePixel
       ..resizePolicy = resizePolicy;
   }
@@ -503,6 +503,7 @@ class _RenderSplitPane extends RenderBox {
         if (roundToWholePixel) {
           splitX = splitX.roundToDouble();
         }
+        splitX = splitX.ps;
         final BoxConstraints beforeConstraints = BoxConstraints.tightFor(
           width: splitX,
           height: size.height,
@@ -558,6 +559,7 @@ class _RenderSplitPane extends RenderBox {
         if (roundToWholePixel) {
           splitY = splitY.roundToDouble();
         }
+        splitY = splitY.ps;
         final BoxConstraints beforeConstraints = BoxConstraints.tightFor(
           width: size.width,
           height: splitY,

@@ -1761,7 +1761,10 @@ class RenderScrollPane extends RenderBox with DeferredLayoutMixin {
     if (view != null) {
       final _ScrollPaneParentData viewParentData = parentDataFor(view!);
       if (clipBehavior == Clip.none) {
-        context.paintChild(view!, offset + viewParentData.offset);
+        // TODO(knopp): Investigate why pixel snapping here is necessary.
+        // Because of repaint boundary this should be a separate layer, which
+        // due to raster cache should always be painted snapped to physical pixels.
+        context.paintChild(view!, offset + viewParentData.offset.pixelSnap());
       } else {
         Rect clipRect = Rect.fromLTWH(
           rowHeaderWidth,
@@ -1770,7 +1773,7 @@ class RenderScrollPane extends RenderBox with DeferredLayoutMixin {
           viewportHeight,
         ).shift(offset);
         context.clipRectAndPaint(clipRect, clipBehavior, clipRect, () {
-          context.paintChild(view!, offset + viewParentData.offset);
+          context.paintChild(view!, offset + viewParentData.offset.pixelSnap());
         });
       }
     }

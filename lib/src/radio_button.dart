@@ -230,7 +230,8 @@ class _RawRadioButton extends LeafRenderObjectWidget {
   }
 
   @override
-  void updateRenderObject(BuildContext context, covariant _RenderRawRadioButton renderObject) {
+  void updateRenderObject(
+      BuildContext context, covariant _RenderRawRadioButton renderObject) {
     renderObject
       ..isSelected = isSelected
       ..isEnabled = isEnabled;
@@ -244,8 +245,8 @@ class _RenderRawRadioButton extends RenderBox {
   })  : _isSelected = isSelected,
         _isEnabled = isEnabled;
 
-  static const double _diameter = 14;
-  static const double _selectionDiameter = 6;
+  double get _diameter => 14.ps;
+  double get _selectionDiameter => 6.ps;
 
   late bool _isSelected;
   bool get isSelected => _isSelected;

@@ -670,11 +670,11 @@ class _RenderSpinner extends RenderBox {
   @override
   double computeMaxIntrinsicWidth(double height) {
     // Border thickness (left, right, and in between the content & the buttons)
-    double width = 3;
-    final double buttonHeightConstraint = (height - 3) / 2;
+    double width = 3.ps;
+    final double buttonHeightConstraint = (height - 3.ps) / 2;
     width += math.max(upButton!.getMaxIntrinsicWidth(buttonHeightConstraint),
         downButton!.getMaxIntrinsicWidth(buttonHeightConstraint));
-    final double contentHeightConstraint = math.max(height - 2, 0);
+    final double contentHeightConstraint = math.max(height - 2.ps, 0);
     width += content!.getMaxIntrinsicWidth(contentHeightConstraint);
     return width;
   }
@@ -695,10 +695,10 @@ class _RenderSpinner extends RenderBox {
       // Subtract the button and border width from width constraint.
       double buttonWidth = math.max(upButton!.getMaxIntrinsicWidth(double.infinity),
           downButton!.getMaxIntrinsicWidth(double.infinity));
-      width = math.max(width - buttonWidth - 2, 0);
+      width = math.max(width - buttonWidth - 2.ps, 0);
     }
 
-    return math.max(height, content!.getMaxIntrinsicHeight(width)) + 1;
+    return math.max(height, content!.getMaxIntrinsicHeight(width)) + 1.ps;
   }
 
   @override
@@ -706,7 +706,7 @@ class _RenderSpinner extends RenderBox {
     super.computeDistanceToActualBaseline(baseline);
     double? result = content!.getDistanceToActualBaseline(baseline);
     if (result != null) {
-      result += 1;
+      result += 1.ps;
     }
     return result;
   }
@@ -715,16 +715,16 @@ class _RenderSpinner extends RenderBox {
   void performLayout() {
     final double buttonWidth = math.min(
       upButton!.getMaxIntrinsicWidth(double.infinity),
-      math.max(constraints.maxWidth - 3, 0),
+      math.max(constraints.maxWidth - 3.ps, 0),
     );
     final BoxConstraints contentConstraints = constraints.deflate(
-      EdgeInsets.only(left: buttonWidth + 3, top: 2),
+      EdgeInsets.only(left: buttonWidth + 3.ps, top: 2.ps),
     );
     content!.layout(contentConstraints, parentUsesSize: true);
     BoxParentData contentParentData = content!.parentData as BoxParentData;
-    contentParentData.offset = Offset(1, 1);
+    contentParentData.offset = Offset(1.ps, 1.ps);
 
-    final double buttonHeight = (content!.size.height - 1) / 2;
+    final double buttonHeight = (content!.size.height - 1.ps) / 2;
     BoxConstraints buttonConstraints = BoxConstraints.tightFor(
       width: buttonWidth,
       height: buttonHeight,
@@ -733,15 +733,15 @@ class _RenderSpinner extends RenderBox {
     downButton!.layout(buttonConstraints);
 
     size = constraints.constrain(Size(
-      content!.size.width + buttonWidth + 3,
-      content!.size.height + 2,
+      content!.size.width + buttonWidth + 3.ps,
+      content!.size.height + 2.ps,
     ));
 
     BoxParentData upButtonParentData = upButton!.parentData as BoxParentData;
-    upButtonParentData.offset = Offset(size.width - buttonWidth - 1, 1);
+    upButtonParentData.offset = Offset(size.width - buttonWidth - 1.ps, 1.ps);
 
     BoxParentData downButtonParentData = downButton!.parentData as BoxParentData;
-    downButtonParentData.offset = Offset(size.width - buttonWidth - 1, buttonHeight + 2);
+    downButtonParentData.offset = Offset(size.width - buttonWidth - 1.ps, buttonHeight + 2.ps);
   }
 
   @override
@@ -778,14 +778,14 @@ class _RenderSpinner extends RenderBox {
 
     ui.Paint paint = ui.Paint()
       ..style = ui.PaintingStyle.stroke
-      ..strokeWidth = 1
+      ..strokeWidth = 1.ps
       ..color = const Color(0xff999999);
     context.canvas
-        .drawRect(Rect.fromLTWH(0.5, 0.5, size.width - 1, size.height - 1).shift(offset), paint);
-    context.canvas.drawLine(offset + Offset(size.width - buttonWidth - 1.5, 0.5),
-        offset + Offset(size.width - buttonWidth - 1.5, size.height - 1), paint);
-    context.canvas.drawLine(offset + Offset(size.width - buttonWidth - 1.5, buttonHeight + 1.5),
-        offset + Offset(size.width - 1, buttonHeight + 1.5), paint);
+        .drawRect(Rect.fromLTWH(1.ps / 2, 1.ps / 2, size.width - 1.ps, size.height - 1.ps).shift(offset), paint);
+    context.canvas.drawLine(offset + Offset(size.width - buttonWidth - 2.ps / 2, 1.ps),
+        offset + Offset(size.width - buttonWidth - 2.ps / 2, size.height - 1.ps), paint);
+    context.canvas.drawLine(offset + Offset(size.width - buttonWidth - 2.ps / 2, buttonHeight + 3.ps / 2),
+        offset + Offset(size.width - 1.ps, buttonHeight + 3.ps / 2), paint);
   }
 
   @override
