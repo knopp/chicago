@@ -232,7 +232,7 @@ class ScrollableListView extends StatelessWidget {
       verticalScrollBarPolicy: ScrollBarPolicy.auto,
       controller: scrollController,
       view: ListView(
-        itemHeight: itemHeight,
+        itemHeight: itemHeight.ps,
         length: length,
         itemBuilder: itemBuilder,
         selectionController: selectionController,

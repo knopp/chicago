@@ -234,6 +234,20 @@ abstract class TablePaneRowHeight {
   bool get isRelative;
 }
 
+class _PixelSnappedRowHeight extends TablePaneRowHeight {
+  const _PixelSnappedRowHeight(TablePaneRowHeight height)
+      : _height = height,
+        super._();
+
+  @override
+  bool get isRelative => _height.isRelative;
+
+  @override
+  double get height => _height.height.ps;
+
+  final TablePaneRowHeight _height;
+}
+
 class IntrinsicTablePaneRowHeight extends TablePaneRowHeight {
   const IntrinsicTablePaneRowHeight([this.mainAxisSize = MainAxisSize.max]) : super._();
 
@@ -475,7 +489,7 @@ class TableRow extends MultiChildRenderObjectWidget {
   @override
   RenderObject createRenderObject(BuildContext context) {
     return RenderTableRow(
-      height: height,
+      height: _PixelSnappedRowHeight(height),
       backgroundColor: backgroundColor,
     );
   }
@@ -483,7 +497,7 @@ class TableRow extends MultiChildRenderObjectWidget {
   @override
   void updateRenderObject(BuildContext context, RenderTableRow renderObject) {
     renderObject
-      ..height = height
+      ..height = _PixelSnappedRowHeight(height)
       ..backgroundColor = backgroundColor;
   }
 }

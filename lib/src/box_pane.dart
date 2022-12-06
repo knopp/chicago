@@ -44,8 +44,8 @@ class BoxPane extends MultiChildRenderObjectWidget {
       axis: axis,
       mainAxisAlignment: mainAxisAlignment,
       crossAxisAlignment: crossAxisAlignment,
-      padding: padding,
-      spacing: spacing,
+      padding: padding.pixelSnap(),
+      spacing: spacing.pixelSnap(),
     );
   }
 
@@ -55,8 +55,8 @@ class BoxPane extends MultiChildRenderObjectWidget {
       ..axis = axis
       ..mainAxisAlignment = mainAxisAlignment
       ..crossAxisAlignment = crossAxisAlignment
-      ..padding = padding
-      ..spacing = spacing;
+      ..padding = padding.pixelSnap()
+      ..spacing = spacing.pixelSnap();
   }
 }
 

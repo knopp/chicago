@@ -137,9 +137,9 @@ class _RawForm extends RenderObjectWidget {
   @override
   _RenderForm createRenderObject(BuildContext context) {
     return _RenderForm(
-      horizontalSpacing: horizontalSpacing,
-      verticalSpacing: verticalSpacing,
-      flagImageOffset: flagImageOffset,
+      horizontalSpacing: horizontalSpacing.ps,
+      verticalSpacing: verticalSpacing.ps,
+      flagImageOffset: flagImageOffset.ps,
       stretch: stretch,
       rightAlignLabels: rightAlignLabels,
     );
@@ -148,9 +148,9 @@ class _RawForm extends RenderObjectWidget {
   @override
   void updateRenderObject(BuildContext context, covariant _RenderForm renderObject) {
     renderObject
-      ..horizontalSpacing = horizontalSpacing
-      ..verticalSpacing = verticalSpacing
-      ..flagImageOffset = flagImageOffset
+      ..horizontalSpacing = horizontalSpacing.ps
+      ..verticalSpacing = verticalSpacing.ps
+      ..flagImageOffset = flagImageOffset.ps
       ..stretch = stretch
       ..rightAlignLabels = rightAlignLabels;
   }
@@ -431,7 +431,7 @@ class _RenderForm extends RenderBox {
     this.rightAlignLabels = rightAlignLabels;
   }
 
-  static const double _flagImageSize = 16;
+   double get _flagImageSize => 16.ps;
 
   double? _horizontalSpacing;
   double get horizontalSpacing => _horizontalSpacing!;

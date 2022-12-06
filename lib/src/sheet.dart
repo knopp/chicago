@@ -38,8 +38,8 @@ class Sheet extends StatelessWidget {
       color: const Color(0xebf6f4ed),
       elevation: 4,
       child: DecoratedBox(
-        decoration: const BoxDecoration(
-          border: Border.fromBorderSide(BorderSide(color: const Color(0xff999999))),
+        decoration: BoxDecoration(
+          border: Border.fromBorderSide(BorderSide(width: 1.0.ps, color: const Color(0xff999999))),
         ),
         child: Padding(
           padding: const EdgeInsets.all(1),

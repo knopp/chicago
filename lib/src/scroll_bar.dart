@@ -785,7 +785,7 @@ class _RenderScrollBarButton extends RenderBox implements MouseTrackerAnnotation
   final int direction;
   late final LongPressGestureRecognizer _longPress;
 
-  static const double _length = 15;
+  double get _length => 15.ps;
 
   bool _enabled = true;
   bool get enabled => _enabled;
@@ -1034,7 +1034,7 @@ class _RenderScrollBarHandle extends RenderBox implements MouseTrackerAnnotation
     );
     context.canvas.save();
     try {
-      context.canvas.translate(offset.dx.floorToDouble(), offset.dy.floorToDouble());
+      context.canvas.translate(offset.dx.ps, offset.dy.ps);
       painter.paint(context.canvas, size);
     } finally {
       context.canvas.restore();
@@ -1230,14 +1230,14 @@ class _ScrollButtonPainter extends CustomPainter {
         bgPaint.color = backgroundColor;
     }
 
-    canvas.drawRect(Offset(1, 1) & Size(size.width - 2, size.height - 2), bgPaint);
+    canvas.drawRect(Offset(1.ps, 1.ps) & Size(size.width - 2.ps, size.height - 2.ps), bgPaint);
 
     // Paint the border
     Paint borderPaint = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1
       ..color = const Color(0xff999999);
-    canvas.drawRect((Offset.zero & size).deflate(0.5), borderPaint);
+    canvas.drawRect((Offset.zero & size).deflate(1.ps / 2.0), borderPaint);
 
     // Paint the arrow
     double arrowX = (size.width - arrow.preferredSize.width) / 2;
@@ -1346,6 +1346,7 @@ class _HandlePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
+
     Color backgroundColor = highlighted ? const Color(0xfff7f5ee) : const Color(0xffdbdad3);
 
     Color brightBackgroundColor = colorUtils.brighten(backgroundColor);
@@ -1354,9 +1355,9 @@ class _HandlePainter extends CustomPainter {
 
     Paint paint = Paint()..style = PaintingStyle.fill;
     if (orientation == Axis.horizontal) {
-      paint.shader = ui.Gradient.linear(Offset(0, 0.5), Offset(0, size.height - 0.5), colors);
+      paint.shader = ui.Gradient.linear(Offset(0, 0.5 * 1.ps), Offset(0, size.height - 0.5 * 1.ps), colors);
     } else {
-      paint.shader = ui.Gradient.linear(Offset(0.5, 0), Offset(size.width - 0.5, 0), colors);
+      paint.shader = ui.Gradient.linear(Offset(0.5 * 1.ps, 0), Offset(size.width - 0.5 * 1.ps, 0), colors);
     }
 
     canvas.drawRect(Offset.zero & size, paint);
@@ -1364,20 +1365,20 @@ class _HandlePainter extends CustomPainter {
     // Paint the border
     Paint borderPaint = Paint()
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 1
+      ..strokeWidth = 1.ps
       ..color = const Color(0xff999999);
     if (orientation == Axis.horizontal) {
-      canvas.drawLine(Offset(0.5, 0), Offset(0.5, size.height), borderPaint);
+      canvas.drawLine(Offset(0.5 * 1.ps, 0), Offset(0.5 * 1.ps, size.height), borderPaint);
       canvas.drawLine(
-        Offset(size.width - 0.5, 0),
-        Offset(size.width - 0.5, size.height),
+        Offset(size.width - 0.5 * 1.ps, 0),
+        Offset(size.width - 0.5 * 1.ps, size.height),
         borderPaint,
       );
     } else {
-      canvas.drawLine(Offset(0, 0.5), Offset(size.width, 0.5), borderPaint);
+      canvas.drawLine(Offset(0, 0.5 * 1.ps), Offset(size.width, 0.5 * 1.ps), borderPaint);
       canvas.drawLine(
-        Offset(0, size.height - 0.5),
-        Offset(size.width, size.height - 0.5),
+        Offset(0, size.height - 0.5 * 1.ps),
+        Offset(size.width, size.height - 0.5 * 1.ps),
         borderPaint,
       );
     }
