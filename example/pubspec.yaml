@@ -12,6 +12,7 @@ dependencies:
   chicago: any
   intl: any
   meta: any
+  pixel_snap: ^0.0.1
 
 dev_dependencies:
   flutter_test:
