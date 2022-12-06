@@ -18,7 +18,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart' hide ScrollController;
+import 'package:pixel_snap/widgets.dart' hide ScrollController;
 
 import 'basic_list_view.dart';
 import 'deferred_layout.dart';

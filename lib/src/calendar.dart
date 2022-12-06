@@ -13,8 +13,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:flutter/widgets.dart' hide Border, TableCell, TableRow;
-import 'package:flutter/widgets.dart' as flutter show Border;
+import 'package:pixel_snap/widgets.dart' hide Border, TableCell, TableRow;
+import 'package:pixel_snap/widgets.dart' as flutter show Border;
 import 'package:intl/intl.dart' as intl;
 
 import 'border_pane.dart';

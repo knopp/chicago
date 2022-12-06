@@ -20,7 +20,7 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
+import 'package:pixel_snap/widgets.dart';
 
 import 'colors.dart';
 import 'focus_indicator.dart';

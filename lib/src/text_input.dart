@@ -16,7 +16,7 @@
 import 'package:flutter/material.dart' show InputBorder, InputDecoration, OutlineInputBorder, TextField;
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
+import 'package:pixel_snap/widgets.dart';
 
 import 'foundation.dart';
 

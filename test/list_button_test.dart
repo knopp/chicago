@@ -14,7 +14,7 @@
 // limitations under the License.
 
 import 'package:chicago/chicago.dart';
-import 'package:flutter/widgets.dart' hide TableCell, TableRow;
+import 'package:pixel_snap/widgets.dart' hide TableCell, TableRow;
 import 'package:flutter_test/flutter_test.dart';
 
 const String kShortString = 'Short';

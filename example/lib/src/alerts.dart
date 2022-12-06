@@ -1,5 +1,5 @@
 import 'package:chicago/chicago.dart';
-import 'package:flutter/widgets.dart';
+import 'package:pixel_snap/widgets.dart';
 
 import 'text.dart';
 

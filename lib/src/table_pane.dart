@@ -18,7 +18,7 @@ import 'dart:math' as math;
 import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
+import 'package:pixel_snap/widgets.dart';
 
 import 'foundation.dart';
 import 'indexed_offset.dart';

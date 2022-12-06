@@ -15,7 +15,7 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
+import 'package:pixel_snap/widgets.dart';
 
 import 'debug.dart';
 import 'segment.dart';

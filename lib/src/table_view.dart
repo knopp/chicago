@@ -19,7 +19,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart' hide TableColumnWidth;
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart' hide ScrollController, TableColumnWidth;
+import 'package:pixel_snap/widgets.dart' hide ScrollController, TableColumnWidth;
 
 import 'basic_table_view.dart';
 import 'deferred_layout.dart';
