@@ -36,7 +36,7 @@ class KitchenSink extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChicagoApp(
+    Widget res = ChicagoApp(
       title: 'Chicago "Kitchen Sink" Demo',
       home: ColoredBox(
         color: const Color(0xffdddcd5),
@@ -77,5 +77,7 @@ class KitchenSink extends StatelessWidget {
         ),
       ),
     );
+    res = PixelSnapDebugBar(child: res);
+    return res;
   }
 }
